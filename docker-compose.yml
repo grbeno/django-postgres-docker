@@ -14,11 +14,13 @@ services:
     environment:
       - "SECRET_KEY=${SECRET_KEY}" # .env
       - "DEBUG=True"
-      - "DATABASE_URL=postgres://${DB_PASSWORD}@db:5432/${DB_NAME}"
+      - "DATABASE_URL=postgres://postgres:postgres@db:5432/postgres"
       - "SSL_REQUIRED=False"
   db:
     image: postgres:16.2
     container_name: my_helloworld_db
+    ports:
+      - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
