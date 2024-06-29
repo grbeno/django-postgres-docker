@@ -1,0 +1,28 @@
+version: '2.24.0'
+
+services:
+  web:
+    build: .
+    container_name: my_helloworld
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - "SECRET_KEY=${SECRET_KEY}" # .env
+      - "DEBUG=True"
+      - "DATABASE_URL=postgres://${DB_PASSWORD}@db:5432/${DB_NAME}"
+      - "SSL_REQUIRED=False"
+  db:
+    image: postgres:16.2
+    container_name: my_helloworld_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+
+volumes:
+  postgres_data:
