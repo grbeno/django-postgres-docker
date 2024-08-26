@@ -1,15 +1,15 @@
 ## Django-Postgres-Docker basic-startproject example
 ---
 
-- Open CLI
+__Open CLI__
 ```
 cd <project-directory>
 ```
 ``` 
 git clone https://github.com/grbeno/django-postgres-docker.git
 ```
----
-- Create .env into the project directory
+
+__Create .env into the project directory__
 
     ```
     # .env
@@ -18,29 +18,28 @@ git clone https://github.com/grbeno/django-postgres-docker.git
     DEBUG=True
     SECRET_KEY=  # <generate one with: $ python -c 'import secrets;print(secrets.token_urlsafe(38))'>
     ```
----
 
-- Build the docker file
+__Build the docker file__
 ```
 docker build .
 ```
-- If something went wrong to see the logs use -d detached mode.
+__If something went wrong to see the logs use -d detached mode__
 ```
 docker-compose up -d  
 ```
-- See the logs if not in detached mode
+__See the logs if not in detached mode__
 ```
 docker-compose logs
 ```
-- Migrate the accounts models to database
+__Migrate the accounts models to database__
 ```
 docker-compose exec web python manage.py makemigrations accounts
 ```
-- Create superuser to log into django admin
+__Create superuser to log into django admin__
 ```
 docker-compose exec web python manage.py createsuperuser
 ```
-- Stop docker-compose, if you are finished
+__Stop docker-compose, if you are finished__
 ```
 docker-compose down
 ```
