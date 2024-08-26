@@ -58,4 +58,6 @@ docker-compose up -d
 ### Developing locally _(independently from docker)_
 ---
 - Set virtual environment to manage package and project dependencies: `venv` or `pipenv` ...
-- Set `DATABASE_URL=postgres://postgres:<DB_PASSWORD>@localhost:5432/<DB_NAME>`  # 1. Installing postgres 2. Create database
+- Set `DATABASE_URL=postgres://postgres:<DB_PASSWORD>@localhost:5432/<DB_NAME>`
+    - Installing postgres
+    - Create database
