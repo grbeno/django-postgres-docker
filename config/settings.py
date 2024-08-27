@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # DB configuered in .env file /DATABASE_URL/ -> dj_database_url.config() returns a dictionary
-db_config = dj_database_url.config(conn_max_age=600, ssl_require=env.bool('SSL_REQUIRE', default=True))
+db_config = dj_database_url.config(conn_max_age=600, ssl_require=env.bool('SSL_REQUIRED', default=True))
 DATABASES = {'default': db_config}
 
 
