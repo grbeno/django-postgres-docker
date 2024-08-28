@@ -23,11 +23,11 @@ __Build the docker file__
 ```
 docker build .
 ```
-__If something went wrong to see the logs use -d detached mode__
+__Run in -d detached mode__
 ```
 docker-compose up -d  
 ```
-__See the logs if not in detached mode__
+__See the logs if something went wrong__
 ```
 docker-compose logs
 ```
