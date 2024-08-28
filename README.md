@@ -21,7 +21,7 @@ __Create .env into the project directory__
 
 __Build the docker file__
 ```
-docker build .
+docker-compose build .
 ```
 __Run in -d detached mode__
 ```
@@ -60,4 +60,4 @@ docker-compose up -d
 - Set virtual environment to manage package and project dependencies: `venv` or `pipenv` ...
 - Set `DATABASE_URL=postgres://postgres:<DB_PASSWORD>@localhost:5432/<DB_NAME>`
     - Installing postgres
-    - Create database
+    - Create database using CLI or pgAdmin
